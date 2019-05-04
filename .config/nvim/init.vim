@@ -101,3 +101,5 @@ set noswapfile
 " won't skip wrapped lines when moving with `j` and `k`
 nnoremap j gj
 nnoremap k gk
+" ctrl + c for esc in insert mode
+inoremap <C-c> <Esc>
