@@ -21,7 +21,11 @@
 call plug#begin('~/.local/share/vnim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'pangloss/vim-javascript'
 call plug#end()
+
+" plugun:vim-javascript
+let g:javascript_plugin_jsdoc=1
 
 " =====================
 "  General 
