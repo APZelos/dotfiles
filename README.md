@@ -39,7 +39,22 @@ Install with Homebrew:
 brew install neovim
 ```
 
+### [coc.nvim](https://github.com/neoclide/coc.nvim)
+
+#### yarn
+You must install yarn before running `:PlugInstall` otherwise coc.nvim installation will fail.
+##### macOS
+Install with Homebrew
+```sh
+brew install yarn
+```
+
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 Follow the instructions [here](https://github.com/junegunn/vim-plug#neovim) to install **vim-plug**.
 
 Open neovim and run `:PlugInstall` to install plugins.
+
+To install coc.nvim extensions open neovim and run:
+```
+:CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css
+```

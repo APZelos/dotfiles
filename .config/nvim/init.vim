@@ -22,7 +22,19 @@ call plug#begin('~/.local/share/vnim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
 call plug#end()
+
+" plugin:lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }
 
 " plugun:vim-javascript
 let g:javascript_plugin_jsdoc=1
@@ -30,6 +42,7 @@ let g:javascript_plugin_jsdoc=1
 " =====================
 "  General 
 " =====================
+set hidden                  " required from coc.nvim
 set mouse=a                 " enables mouse in all modes
 set autoread                " auto reads a file when changed form the outside
 
@@ -51,6 +64,8 @@ set cursorline              " highlight current line
 set wildmenu                " visual autocomplete for command menu
 set showmatch               " highlight matching brace
 set laststatus=2            " window will always have a status line
+set signcolumn=yes          " always shows sign column (left gutter)
+highlight clear SignColumn  " sets sign column (left gutter) color to clear
 
 " =====================
 "  Splits 
@@ -103,3 +118,15 @@ nnoremap j gj
 nnoremap k gk
 " ctrl + c for esc in insert mode
 inoremap <C-c> <Esc>
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
