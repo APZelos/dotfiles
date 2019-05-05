@@ -26,13 +26,32 @@ Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
 call plug#end()
 
 " plugin:lightline
+function! CocStatus() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, 'E' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, 'W' . info['warning'])
+  endif
+  if get(info, 'information', 0)
+    call add(msgs, 'I' . info['information'])
+  endif
+  if get(info, 'hint', 0)
+    call add(msgs, 'H' . info['hint'])
+  endif
+  return join(msgs, ' ')
+endfunction
+
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'cocstatus': 'coc#status'
+      \   'cocstatus': 'CocStatus'
       \ },
       \ }
 
