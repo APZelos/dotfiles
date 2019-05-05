@@ -59,6 +59,7 @@ colorscheme gruvbox
 set lazyredraw              " disables unnecessary redraws
 set number                  " show current line number
 set relativenumber          " show line number relative to current line
+set noshowmode              " disables mode status from showing in bottom bar
 set showcmd                 " show command in bottom bar
 set cursorline              " highlight current line
 set wildmenu                " visual autocomplete for command menu
