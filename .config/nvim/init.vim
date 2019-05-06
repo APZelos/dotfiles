@@ -25,6 +25,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
 Plug 'mhinz/vim-signify'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " plugin:lightline
