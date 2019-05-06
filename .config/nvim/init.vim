@@ -23,6 +23,7 @@ Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 " plugin:lightline
@@ -58,6 +59,15 @@ let g:lightline = {
 " plugun:vim-javascript
 let g:javascript_plugin_jsdoc=1
 
+" plugin:vim-signify
+let g:signify_vcs_list=[ 'git' ]
+let g:signify_sign_show_count=0
+let g:signify_sign_add='█'
+let g:signify_sign_delete='█'
+let g:signify_sign_delete_first_line='█'
+let g:signify_sign_change='█'
+let g:signify_sign_changedelete=g:signify_sign_change
+
 " =====================
 "  General 
 " =====================
@@ -70,6 +80,7 @@ set autoread                " auto reads a file when changed form the outside
 " =====================
 set termguicolors           " enables true colors
 let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_sign_column='dark0_hard'
 colorscheme gruvbox
 
 " =====================
@@ -85,7 +96,7 @@ set wildmenu                " visual autocomplete for command menu
 set showmatch               " highlight matching brace
 set laststatus=2            " window will always have a status line
 set signcolumn=yes          " always shows sign column (left gutter)
-highlight clear SignColumn  " sets sign column (left gutter) color to clear
+"highlight clear SignColumn  " sets sign column (left gutter) color to clear
 
 " =====================
 "  Splits 
