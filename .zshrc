@@ -21,6 +21,7 @@ DEFAULT_USER=apzelos
 alias 'la=ls -la'
 alias 'll=ls -lh'
 alias 'vim=nvim'
+alias 'vimdiff=nvim -d'
 alias 'cd:repos=cd ~/repos'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
