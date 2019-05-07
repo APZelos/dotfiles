@@ -7,6 +7,7 @@
 #    Language
 #    History
 #    Plugins
+#    Exports
 # =====================
 
 # =====================
@@ -78,3 +79,11 @@ zplugin light zdharma/fast-syntax-highlighting
 
 export NVM_LAZY_LOAD=true
 zplugin light lukechilds/zsh-nvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+# =====================
+# Exports
+# =====================
+export PATH="$PATH:/usr/local/opt/mongodb@3.6/bin/"
