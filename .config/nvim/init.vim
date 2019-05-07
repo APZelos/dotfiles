@@ -27,6 +27,7 @@ Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " plugin:lightline
@@ -70,6 +71,13 @@ let g:signify_sign_delete='█'
 let g:signify_sign_delete_first_line='█'
 let g:signify_sign_change='█'
 let g:signify_sign_changedelete=g:signify_sign_change
+
+" plugin:NERDTree
+let NERDTreeShowHidden=1    " shows hidden files (dotfiles etc.)
+let NERDTreeQuitOnOpen=1    " closes NERDTree after opening a file
+let NERDTreeMinimalUI=1     " hides unnecessary staff
+" closes NERDTree if is the last tab open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " =====================
 "  General 
