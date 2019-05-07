@@ -60,7 +60,7 @@ let g:lightline = {
       \ },
       \ }
 
-" plugun:vim-javascript
+" plugin:vim-javascript
 let g:javascript_plugin_jsdoc=1
 
 " plugin:vim-signify
