@@ -54,25 +54,8 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
 
-SPACESHIP_CHAR_SYMBOL='❯ '
-SPACESHIP_GIT_SYMBOL=''
-SPACESHIP_DIR_TRUNC_PREFIX='.../'
-SPACESHIP_PROMPT_ORDER=(
-  dir           # Current directory section
-  user          # Username section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  node          # Node.js section
-  xcode         # Xcode section
-  aws           # Amazon Web Services section
-  exec_time     # Execution time
-  line_sep      # Line break
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-zplugin light 'denysdovhan/spaceship-prompt'
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light sindresorhus/pure
 
 zplugin light zsh-users/zsh-autosuggestions
 
@@ -87,4 +70,4 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # =====================
 # Exports
 # =====================
-export PATH="$PATH:/usr/local/opt/mongodb@3.6/bin/"
+export PATH="$PATH:/usr/local/opt/mongodb@3.6/bin/"h
