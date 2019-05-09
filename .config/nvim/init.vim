@@ -111,7 +111,6 @@ set wildmenu                " visual autocomplete for command menu
 set showmatch               " highlight matching brace
 set laststatus=2            " window will always have a status line
 set signcolumn=yes          " always shows sign column (left gutter)
-"highlight clear SignColumn  " sets sign column (left gutter) color to clear
 
 " =====================
 "  Splits 
