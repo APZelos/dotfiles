@@ -23,6 +23,7 @@ call plug#begin('~/.local/share/vnim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
@@ -64,6 +65,9 @@ let g:lightline = {
 
 " plugin:indentLine
 let g:indentLine_char='│'
+
+" plugin:vim-json
+let g:vim_json_syntax_conceal=0
 
 " plugin:vim-javascript
 let g:javascript_plugin_jsdoc=1
