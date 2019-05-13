@@ -10,6 +10,7 @@
 "    Spaces & Tabs
 "    Clipboard
 "    Search
+"    Spelling
 "    Filetypes
 "    Backup & Swap files
 "    Remaps
@@ -142,6 +143,12 @@ set incsearch               " search as characters are entered
 set hlsearch                " highlight matche
 set ignorecase              " ignore case when searching
 set smartcase               " ignore case if search pattern is lower case
+
+" =====================
+"  Spelling
+" =====================
+set spelllang=en            " set English as spelling language
+set spell                   " activates spelling
 
 " =====================
 "  Filetypes
