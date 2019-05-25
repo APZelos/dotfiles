@@ -81,6 +81,13 @@ let g:signify_sign_delete_first_line='│'
 let g:signify_sign_change='│'
 let g:signify_sign_changedelete=g:signify_sign_change
 
+" plugin:fzf.vim
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
+" Likewise, Files command with preview window
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
 " plugin:NERDTree
 let NERDTreeShowHidden=1    " shows hidden files (dotfiles etc.)
 let NERDTreeQuitOnOpen=1    " closes NERDTree after opening a file
