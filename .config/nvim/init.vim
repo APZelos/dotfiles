@@ -189,6 +189,9 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+" makes ctrl + e and ctrl + y move 2 lines at a time
+nnoremap <C-e> 2<C-e>M
+nnoremap <C-y> 2<C-y>M
 
 " plugin:fzf
 nnoremap <C-p> :Files<CR>
