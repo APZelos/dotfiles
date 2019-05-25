@@ -23,9 +23,12 @@ call plug#begin('~/.local/share/vnim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
