@@ -20,17 +20,22 @@
 "  Plugins
 " =====================
 call plug#begin('~/.local/share/vnim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'mg979/vim-visual-multi'
 Plug 'elzr/vim-json'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
 Plug 'mhinz/vim-signify'
+Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
@@ -74,6 +79,15 @@ let g:vim_json_syntax_conceal=0
 
 " plugin:vim-javascript
 let g:javascript_plugin_jsdoc=1
+
+" plugin:ale
+let g:ale_sign_error='█'
+let g:ale_sign_warning='█'
+let g:ale_linters={
+      \'elm': ['elm_lsp', 'make'],
+      \ 'haskell': ['cabal_ghc', 'ghc', 'ghc_mod', 'hdevtools', 'hie', 'hlint', 'stack_build', 'stack_ghc'],
+      \}
+let g:ale_linters_explicit=1
 
 " plugin:vim-signify
 let g:signify_vcs_list=[ 'git' ]
