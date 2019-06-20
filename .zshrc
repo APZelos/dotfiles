@@ -24,6 +24,9 @@ alias 'vim=nvim'
 alias 'vimdiff=nvim -d'
 alias 'cd:repos=cd ~/repos'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias ag='ag --path-to-ignore ~/.ignore'
+alias glog="git log --pretty=oneline --abbrev-commit | fzf --preview 'echo {} | cut -f 1 -d \" \" | xargs git show --color=always'"
+alias gdiff="git diff --name-only | fzf --preview 'echo {} | xargs git diff --color=always | diff-so-fancy | less --tabs=4 -RFX'"
 
 # =====================
 #  Language
@@ -65,4 +68,5 @@ export NVM_LAZY_LOAD=true
 zplugin light lukechilds/zsh-nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag -U --hidden --path-to-ignore ~/.ignore -g ""'
+export FZF_CTRL_T_COMMAND='ag -U --hidden --path-to-ignore ~/.ignore -g ""'
