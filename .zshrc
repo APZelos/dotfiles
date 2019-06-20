@@ -70,3 +70,9 @@ zplugin light lukechilds/zsh-nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -U --hidden --path-to-ignore ~/.ignore -g ""'
 export FZF_CTRL_T_COMMAND='ag -U --hidden --path-to-ignore ~/.ignore -g ""'
+
+# =====================
+#  Files to load
+# =====================
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
