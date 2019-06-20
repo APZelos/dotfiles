@@ -140,6 +140,7 @@ set wildmenu                " visual autocomplete for command menu
 set showmatch               " highlight matching brace
 set laststatus=2            " window will always have a status line
 set signcolumn=yes          " always shows sign column (left gutter)
+set scrolloff=5             " always shows 5 line before/after cursor
 
 " =====================
 "  Splits 
