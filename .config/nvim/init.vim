@@ -22,7 +22,9 @@
 call plug#begin('~/.local/share/vnim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
+Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'mg979/vim-visual-multi'
@@ -30,6 +32,7 @@ Plug 'elzr/vim-json'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'elmcast/elm-vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
@@ -39,6 +42,8 @@ Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'metakirby5/codi.vim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " plugin:lightline
@@ -73,6 +78,9 @@ let g:lightline = {
 
 " plugin:indentLine
 let g:indentLine_char='│'
+
+" plugin:vim-illuminate
+let g:Illuminate_delay=500
 
 " plugin:vim-json
 let g:vim_json_syntax_conceal=0
