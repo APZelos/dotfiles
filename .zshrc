@@ -74,5 +74,4 @@ export FZF_CTRL_T_COMMAND='ag -U --hidden --path-to-ignore ~/.ignore -g ""'
 # =====================
 #  Files to load
 # =====================
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
+[ -f ~/.profile ] && source ~/.profile
