@@ -133,7 +133,10 @@ set autoread                " auto reads a file when changed form the outside
 set termguicolors           " enables true colors
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_sign_column='dark0_hard'
+let g:gruvbox_invert_selection=0
+let g:gruvbox_italic=1
 colorscheme gruvbox
+hi CocErrorHighlight cterm=undercurl gui=undercurl guisp=#fb4934
 
 " =====================
 "  UI Config 
@@ -143,6 +146,7 @@ set number                  " show current line number
 set relativenumber          " show line number relative to current line
 set noshowmode              " disables mode status from showing in bottom bar
 set showcmd                 " show command in bottom bar
+set guicursor+=i:block-Cursor
 set cursorline              " highlight current line
 set wildmenu                " visual autocomplete for command menu
 set showmatch               " highlight matching brace
