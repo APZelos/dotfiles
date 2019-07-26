@@ -22,7 +22,6 @@
 call plug#begin('~/.local/share/vnim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
-Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-surround'
