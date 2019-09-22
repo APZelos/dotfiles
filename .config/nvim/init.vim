@@ -124,6 +124,7 @@ command! -bang -nargs=? -complete=dir Files
 let NERDTreeShowHidden=1    " shows hidden files (dotfiles etc.)
 let NERDTreeQuitOnOpen=1    " closes NERDTree after opening a file
 let NERDTreeMinimalUI=1     " hides unnecessary staff
+let g:NERDTreeWinSize=45
 " closes NERDTree if is the last tab open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -232,6 +233,11 @@ nnoremap <C-y> 2<C-y>
 
 " plugin:fzf
 nnoremap <C-p> :Files<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-g> :GitFiles?<CR>
+
+" plugin: nerdtree
+nnoremap <silent> <expr> <C-f> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " plugin:coc.nvim
 " goes to definition
