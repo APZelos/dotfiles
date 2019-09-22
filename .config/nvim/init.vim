@@ -19,7 +19,7 @@
 " =====================
 "  Plugins
 " =====================
-call plug#begin('~/.local/share/vnim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
