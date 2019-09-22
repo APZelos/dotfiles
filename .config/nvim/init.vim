@@ -25,13 +25,17 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'mg979/vim-visual-multi'
 Plug 'elzr/vim-json'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'elmcast/elm-vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
@@ -41,8 +45,8 @@ Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'metakirby5/codi.vim'
-Plug 'junegunn/goyo.vim'
+Plug 'APZelos/blamer.nvim'
+Plug 'APZelos/gitline.vim'
 call plug#end()
 
 " plugin:lightline
@@ -68,10 +72,14 @@ endfunction
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'cocstatus', 'readonly', 'branchname', 'gitfetchstatus', 'gitfilecount', 'filename', 'gitfilestatus', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'cocstatus': 'CocStatus'
+      \   'cocstatus': 'CocStatus',
+      \   'gitfilecount': 'gitline#FileCount',
+      \   'branchname': 'gitline#BranchName',
+      \   'gitfilestatus': 'gitline#FileStatus',
+      \   'gitfetchstatus': 'gitline#FetchStatus'
       \ },
       \ }
 
