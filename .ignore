@@ -7,13 +7,19 @@
 # haskell
 .stack-work/
 
+# elm
+elm-stuff/
+
 # jacascript
 node_modules/
+jspm_packages/
 npm-debug.log
 package-lock.json
 yarn-error.log
 yarn.lock
 dist/
+.cache/
+public
 
 # Xcode
 build/
