@@ -1,13 +1,13 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact"],
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+  "suggest.timeout": 4000,
+  "diagnostic.displayByAle": true,
   "diagnostic.virtualText": true,
   "diagnostic.level": "warning",
   "diagnostic.errorSign": "█",
   "diagnostic.warningSign": "█",
   "diagnostic.infoSign": "█",
   "diagnostic.hintSign": "█",
-  "tsserver.npm": "/Users/apzelos/.nvm/versions/node/v12.1.0"
+  "yank.enableCompletion": false
 }
