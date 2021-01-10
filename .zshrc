@@ -24,13 +24,18 @@ alias 'll=ls -lh'
 # dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # configuration
-alias 'cfg:vi=nvim ~/.config/nvim/'
-alias 'cfg:vim=nvim ~/.config/nvim/'
 alias 'cfg:nvim=nvim ~/.config/nvim/'
+alias 'cfg:vi=cfg:nvim'
+alias 'cfg:vim=cfg:nvim'
 alias 'cfg:coc=nvim ~/.config/nvim/coc-settings.json'
 alias 'cfg:kitty=nvim ~/.config/kitty/kitty.conf'
 alias 'cfg:zsh=nvim ~/.zshrc'
 alias 'cfg:profile=nvim ~/.profile'
+# update
+alias 'update:zsh=zplugin update --all'
+alias 'update:nvim=brew upgrade --fetch-HEAD neovim'
+alias 'update:vi=update:nvim'
+alias 'update:vim=update:nvim'
 # cd
 alias 'cd:vi=cd ~/.config/nvim'
 alias 'cd:vim=cd ~/.config/nvim'
@@ -38,18 +43,18 @@ alias 'cd:nvim=cd ~/.config/nvim'
 alias 'cd:repos=cd ~/repos'
 # zsh
 alias 'zsh:reload=source ~/.zshrc'
-alias 'zsh:cfg=nvim ~/.zshrc'
-alias 'zsh:update=zplugin update --all'
+alias 'zsh:cfg=cfg:zsh'
+alias 'zsh:update=update:zsh'
 # nvim
 alias 'vi=nvim'
 alias 'vim=nvim'
 alias 'vimdiff=nvim -d'
-alias 'vi:cfg=nvim ~/.config/nvim/init.vim'
-alias 'vim:cfg=nvim ~/.config/nvim/init.vim'
-alias 'nvim:config=nvim ~/.config/nvim/init.vim'
-# git
-alias glog="git log --pretty=oneline --abbrev-commit | fzf --preview 'echo {} | cut -f 1 -d \" \" | xargs git show --color=always'"
-alias gdiff="git diff --name-only | fzf --preview 'echo {} | xargs git diff --color=always | diff-so-fancy | less --tabs=4 -RFX'"
+alias 'vi:cfg=cfg:nvim'
+alias 'vim:cfg=cfg:nvim'
+alias 'nvim:config=cfg:nvim'
+alias 'vi:update=update:nvim'
+alias 'vim:update=update:nvim'
+alias 'nvim:update=update:nvim'
 
 # =====================
 #  Language
