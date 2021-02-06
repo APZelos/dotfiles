@@ -1,24 +1,8 @@
-# =====================
-#  ZSH configuration
-# 
-#  Table of Contents
-#    General
-#    Aliases
-#    Language
-#    History
-#    Plugins
-#    Exports
-# =====================
+# vim:foldmethod=marker
 
-# =====================
-#  General
-# =====================
-DEFAULT_USER=apzelos
-
-# =====================
-#  Aliases
-# =====================
+# aliases {{{
 # ls
+alias 'ls=exa'
 alias 'la=ls -la'
 alias 'll=ls -lh'
 # dotfiles
@@ -55,19 +39,9 @@ alias 'nvim:config=cfg:nvim'
 alias 'vi:update=update:nvim'
 alias 'vim:update=update:nvim'
 alias 'nvim:update=update:nvim'
+# }}}
 
-# =====================
-#  Language
-# =====================
-export LANG=en_US.UTF-8
-export LC_ALL="en_US.UTF-8"
-
-# =====================
-#  History
-# =====================
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=50000
-SAVEHIST=10000
+# history {{{
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
@@ -75,39 +49,67 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
+# }}}
 
-# =====================
-#  Plugins
-# =====================
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin's installer chunk
+# zinit {{{
+### Added by zinit's installer
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of zinit's installer chunk
+# }}}
 
-zplugin ice pick"async.zsh" src"pure.zsh"
-zplugin light sindresorhus/pure
+# annexes {{{
+zinit light-mode compile"handler" for \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-bin-gem-node \
+    zinit-zsh/z-a-submods
+# }}}
 
-zplugin light zsh-users/zsh-autosuggestions
+# plugins {{{
+zinit lucid load pick"/dev/null" multisrc"{async,pure}.zsh" for \
+    sindresorhus/pure
 
-zplugin light zdharma/fast-syntax-highlighting
+zinit wait lucid light-mode for \
+      Aloxaf/fzf-tab \
+      rupa/z \
+      lukechilds/zsh-better-npm-completion \
+  atload"zpcdreplay" atclone'./zplug.zsh' \
+      g-plane/zsh-yarn-autocompletions \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions
 
-export NVM_LAZY_LOAD=true
-zplugin light lukechilds/zsh-nvm
+# Recommended Be Loaded Last.
+zinit ice wait blockf lucid atpull'zinit creinstall -q .'
+zinit load zsh-users/zsh-completions
 
+autoload -Uz compinit
+compinit
+zinit cdreplay -q
+# }}}
+
+# zstyle {{{
+zstyle ":completion:*:git-checkout:*" sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'cat $realpath'
+# }}}
+
+# fzf {{{
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag -U --hidden --path-to-ignore ~/.ignore -g ""'
-export FZF_CTRL_T_COMMAND='ag -U --hidden --path-to-ignore ~/.ignore -g ""'
+# }}}
 
-# =====================
-#  FNM (nodejs version managment)
-# =====================
+# fnm {{{
 eval "`fnm env --multi --shell=zsh --use-on-cd`"
+# }}}
 
-# =====================
-#  Files to load
-# =====================
+# profile {{{
 [ -f ~/.profile ] && source ~/.profile
+# }}}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:./node_modules/.bin:./vendor/bin:./bin:/.fnm/current/bin"
