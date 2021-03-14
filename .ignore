@@ -23,6 +23,7 @@ package-lock.json
 yarn-error.log
 yarn.lock
 dist/
+.tmp/
 .cache/
 public
 
