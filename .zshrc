@@ -2,9 +2,9 @@
 
 # aliases {{{
 # ls
-alias 'ls=exa'
-alias 'la=ls -la'
-alias 'll=ls -lh'
+alias 'ls=exa --group-directories-first'
+alias 'la=ls -la --group-directories-first'
+alias 'll=ls -lh --group-directories-first'
 # dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # configuration
