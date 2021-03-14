@@ -110,12 +110,10 @@ zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'cat $realpath'
 # }}}
 
 # fnm {{{
-eval "`fnm env --multi --shell=zsh --use-on-cd`"
+export PATH="$PATH:$HOME/.fnm"
+eval "`fnm env --shell=zsh --use-on-cd`"
 # }}}
 
 # profile {{{
 [ -f ~/.profile ] && source ~/.profile
 # }}}
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:./node_modules/.bin:./vendor/bin:./bin:/.fnm/current/bin"
