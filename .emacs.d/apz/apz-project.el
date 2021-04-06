@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'apz-js)
+(require 'apz-go)
 
 (defgroup apz-project ()
   "Utilites for project.el."
@@ -25,6 +26,16 @@
 	(let ((root (apz-js-find-project-root file)))
 		(when root
 			(cons 'nodejs root))))
+
+(cl-defmethod project-root ((project (head go)))
+  "Implementation of `project-root' method for go projects."
+  (cdr project))
+
+(defun apz-project-try-go-mod (file)
+  "Check if FILE belongs to a go project."
+	(let ((root (apz-go-find-project-root file)))
+		(when root
+			(cons 'go root))))
 
 (cl-defmethod project-root ((project (head emacs)))
   "Implementation of `project-root' method for Emacs projects."

@@ -153,6 +153,7 @@
 	(add-hook 'project-find-functions #'apz-project-try-init-vim 90)
 	(add-hook 'project-find-functions #'apz-project-try-init-el 90)
 	(add-hook 'project-find-functions #'apz-project-try-package-json 90)
+	(add-hook 'project-find-functions #'apz-project-try-go-mod 90)
   (apz-keybinding-global "C-SPC f p" 'project-switch-project "Find Project")
   (apz-keybinding-global "C-SPC p" nil "Project")
   (apz-keybinding-global "C-SPC p d" 'project-dired "Project Root Directory"))
@@ -216,6 +217,12 @@
   (global-git-gutter-mode +1))
 
 ;; Coding
+(use-package go-mode
+  :ensure t
+  :hook (go-mode . eglot-ensure)
+  :config
+  (apz-keybinding-define-map go-mode-map "C-SPC C-f" 'gofmt "Format (gofmt)"))
+
 (use-package js
   :ensure t
   :hook (js-mode . eglot-ensure)
