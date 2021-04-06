@@ -30,13 +30,5 @@ else default to the directory returned from `consult-project-root-function'."
       (consult-find)
     (consult-find t)))
 
-;;;###autoload
-(defun apz-consult-find-current-project-root ()
-  "Return the root directory of the current project or the `default-directory'."
-  (let ((root (project-current)))
-    (if root
-      (project-root root)
-      default-directory)))
-
 (provide 'apz-consult)
 ;;; apz-consult.el ends here

@@ -8,6 +8,14 @@
   "Utilites for project.el."
   :group 'tools)
 
+;;;###autoload
+(defun apz-project-find-current-root ()
+  "Return the root directory of the current project or the `default-directory'."
+  (let ((root (project-current)))
+    (if root
+      (project-root root)
+      default-directory)))
+
 (cl-defmethod project-root ((project (head nodejs)))
   "Implementation of `project-root' method for nodejs projects."
   (cdr project))

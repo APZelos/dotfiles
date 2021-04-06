@@ -174,7 +174,7 @@
 
 (use-package apz-consult
   :config
-  (setq consult-project-root-function #'apz-consult-find-current-project-root)
+  (setq consult-project-root-function #'apz-project-find-current-root)
   (apz-keybinding-global "C-SPC f f" 'apz-consult-find-file "Find File")
   (apz-keybinding-global "C-SPC f s" 'apz-consult-ripgrep "Search")
   (apz-keybinding-global "C-SPC f l" 'consult-line "Find Line"))
