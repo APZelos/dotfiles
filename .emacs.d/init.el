@@ -220,7 +220,8 @@
   :ensure t
   :hook (js-mode . eglot-ensure)
   :config
-  (setq js-indent-level 2))
+  (setq js-indent-level 2)
+  (apz-keybinding-define-map js-mode-map "C-SPC C-f" 'prettier-prettify "Format (prettier)"))
 
 (apz-keybinding-global "C-SPC j" nil "Javascript")
 
@@ -245,8 +246,6 @@
 
 (use-package prettier
   :ensure t)
-
-(apz-keybinding-global "C-SPC j f" 'prettier-prettify "Format with prettier")
 
 (use-package eglot
   :ensure t
